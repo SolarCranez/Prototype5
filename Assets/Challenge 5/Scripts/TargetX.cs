@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class TargetX : MonoBehaviour
 {
+    // target's rigidbody
     private Rigidbody rb;
+    // reference to gamemanager
     private GameManagerX gameManagerX;
+    // points
     public int pointValue;
+    // explosion particle object
     public GameObject explosionFx;
 
+    // variable for how long object stays on screen for
     public float timeOnScreen = 1.0f;
 
     private float minValueX = -3.75f; // the x value of the center of the left-most square
@@ -18,6 +23,7 @@ public class TargetX : MonoBehaviour
 
     void Start()
     {
+        // get target's rigidbody, gamemanager object, start spawning objects
         rb = GetComponent<Rigidbody>();
         gameManagerX = GameObject.Find("Game Manager").GetComponent<GameManagerX>();
 
